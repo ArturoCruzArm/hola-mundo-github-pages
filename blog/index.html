@@ -1,0 +1,97 @@
+---
+layout: default
+title: "Blog - Hola Mundo"
+description: "Artículos sobre desarrollo web, GitHub Pages y tecnología"
+---
+<header class="header">
+    <nav class="nav container">
+        <a href="{{ '/' | relative_url }}" class="logo">
+            <span class="logo-icon">🚀</span>
+            <span>HolaMundo</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ '/' | relative_url }}#features">Features</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}" class="active">Blog</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="search-toggle" id="searchToggle" aria-label="Buscar">🔍</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+        </div>
+    </nav>
+</header>
+
+{% include search-modal.html %}
+
+<main class="blog-page">
+    <div class="container">
+        <header class="page-header" data-aos="fade-up">
+            <h1>📝 Blog</h1>
+            <p>Artículos sobre desarrollo web, tecnología y más</p>
+        </header>
+
+        <!-- Categories Filter -->
+        <div class="blog-filters" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            {% assign categories = site.posts | map: "categories" | flatten | uniq %}
+            {% for category in categories %}
+            <button class="filter-btn" data-category="{{ category | downcase }}">{{ category }}</button>
+            {% endfor %}
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="posts-grid">
+            {% for post in site.posts %}
+            <article class="post-card" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 50 }}" data-category="{{ post.categories | first | downcase }}">
+                {% if post.image %}
+                <div class="post-card-image">
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+                </div>
+                {% endif %}
+                <div class="post-card-content">
+                    <div class="post-card-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%d %b %Y" }}
+                        </time>
+                        {% if post.categories %}
+                        <span class="category">{{ post.categories | first }}</span>
+                        {% endif %}
+                    </div>
+                    <h2 class="post-card-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h2>
+                    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                    <div class="post-card-footer">
+                        <a href="{{ post.url | relative_url }}" class="read-more">
+                            Leer más →
+                        </a>
+                        {% if post.reading_time %}
+                        <span class="reading-time">{{ post.reading_time }} min</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if site.posts.size == 0 %}
+        <div class="no-posts" data-aos="fade-up">
+            <p>🚧 Próximamente habrá artículos aquí</p>
+        </div>
+        {% endif %}
+
+        <!-- RSS Feed Link -->
+        <div class="rss-link" data-aos="fade-up">
+            <a href="{{ '/feed.xml' | relative_url }}">
+                📡 Suscríbete al RSS
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>Hecho con ❤️ para GitHub Pages</p>
+        <p class="copyright">© {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+    </div>
+</footer>

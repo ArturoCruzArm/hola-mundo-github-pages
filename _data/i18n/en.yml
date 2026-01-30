@@ -1,0 +1,81 @@
+# English
+lang: en
+lang_name: English
+flag: 🇺🇸
+
+# Navigation
+nav:
+  home: Home
+  features: Features
+  blog: Blog
+  contact: Contact
+  search: Search
+
+# Hero
+hero:
+  title: "Hello World!"
+  subtitle: "Demo project with top GitHub Pages technologies"
+  cta_primary: "View on GitHub"
+  cta_secondary: "Explore Tech Stack"
+
+# Features
+features:
+  title: "Features"
+  fast:
+    title: "Ultra Fast"
+    desc: "Static site optimized for maximum speed"
+  responsive:
+    title: "Responsive"
+    desc: "Adaptive design for any device"
+  dark_mode:
+    title: "Dark Mode"
+    desc: "Dark/light theme with auto detection"
+  secure:
+    title: "Secure"
+    desc: "Free HTTPS with GitHub Pages"
+  seo:
+    title: "SEO Ready"
+    desc: "Optimized for search engines"
+  pwa:
+    title: "PWA"
+    desc: "Installable as native app"
+
+# Blog
+blog:
+  title: "Blog"
+  read_more: "Read more"
+  minutes: "min read"
+  no_posts: "Posts coming soon"
+  subscribe_rss: "Subscribe to RSS"
+
+# Contact
+contact:
+  title: "Contact"
+  subtitle: "Have questions? We'd love to hear from you!"
+  name: "Name"
+  email: "Email"
+  subject: "Subject"
+  message: "Message"
+  send: "Send message"
+  sending: "Sending..."
+  thanks: "Thank you!"
+  thanks_msg: "Your message has been sent"
+
+# Search
+search:
+  placeholder: "Search the site..."
+  no_results: "No results found"
+  suggestions: "Suggestions"
+
+# Footer
+footer:
+  made_with: "Made with ❤️ for GitHub Pages"
+  copyright: "All rights reserved"
+
+# Misc
+misc:
+  share: "Share"
+  comments: "Comments"
+  author: "Author"
+  previous: "Previous"
+  next: "Next"

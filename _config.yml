@@ -1,0 +1,147 @@
+# Jekyll Configuration for GitHub Pages
+# https://jekyllrb.com/docs/configuration/
+
+# ===== Site Settings =====
+title: "Hola Mundo - GitHub Pages"
+description: "Demo con las top tecnologías de GitHub Pages"
+url: "" # Tu URL: https://tu-usuario.github.io
+baseurl: "" # Subpath si aplica: /nombre-repo
+lang: es
+
+# ===== Build Settings =====
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# ===== Plugins =====
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# ===== Author =====
+author:
+  name: "Tu Nombre"
+  email: "tu@email.com"
+  bio: "Desarrollador apasionado por la tecnología"
+  twitter: "tu_twitter"
+  github: "tu-usuario"
+
+# ===== Social Links =====
+social:
+  name: "Hola Mundo"
+  links:
+    - https://github.com/tu-usuario
+    - https://twitter.com/tu_twitter
+    - https://linkedin.com/in/tu-perfil
+
+# ===== i18n (Internacionalización) =====
+languages:
+  - code: es
+    name: Español
+    flag: "🇪🇸"
+  - code: en
+    name: English
+    flag: "🇺🇸"
+  - code: pt
+    name: Português
+    flag: "🇧🇷"
+
+default_lang: es
+
+# ===== Comments (Giscus) =====
+# Configura en: https://giscus.app/
+giscus:
+  repo: "tu-usuario/hola-mundo-github-pages"
+  repo_id: ""  # Obtener de giscus.app
+  category: "Comments"
+  category_id: ""  # Obtener de giscus.app
+
+# ===== Analytics =====
+# Google Analytics (opcional)
+# google_analytics: "G-XXXXXXXXXX"
+
+# Plausible Analytics (privacy-friendly, opcional)
+# plausible_domain: "tu-usuario.github.io"
+
+# ===== Blog Settings =====
+permalink: /blog/:title/
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+show_excerpts: true
+excerpt_separator: "<!--more-->"
+
+# ===== Collections =====
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# ===== Defaults =====
+defaults:
+  # Páginas
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  # Posts
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      author: admin
+
+# ===== Exclude/Include =====
+exclude:
+  - README.md
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .github
+  - lighthouserc.json
+  - "*.gemspec"
+
+include:
+  - _redirects
+  - .well-known
+
+# ===== Sass =====
+sass:
+  style: compressed
+  sourcemap: never
+
+# ===== Timezone =====
+timezone: America/Mexico_City
+
+# ===== Feed =====
+feed:
+  path: feed.xml
+  posts_limit: 20
+
+# ===== SEO =====
+twitter:
+  username: tu_twitter
+  card: summary_large_image
+
+logo: /assets/og-image.png
+
+# ===== PWA =====
+pwa:
+  enabled: true
+  name: "Hola Mundo"
+  short_name: "HolaMundo"
+  theme_color: "#6366f1"
+  background_color: "#ffffff"

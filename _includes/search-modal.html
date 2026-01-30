@@ -1,0 +1,35 @@
+<!-- Search Modal -->
+<div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-modal-overlay" id="searchOverlay"></div>
+    <div class="search-modal-content">
+        <div class="search-header">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text"
+                       id="searchInput"
+                       class="search-input"
+                       placeholder="Buscar en el sitio..."
+                       autocomplete="off"
+                       autofocus>
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <button class="search-close" id="searchClose" aria-label="Cerrar búsqueda">✕</button>
+        </div>
+        <div class="search-results" id="searchResults">
+            <div class="search-empty">
+                <p>Escribe para buscar...</p>
+                <div class="search-suggestions">
+                    <span>Sugerencias:</span>
+                    <button class="suggestion" data-query="javascript">JavaScript</button>
+                    <button class="suggestion" data-query="css">CSS</button>
+                    <button class="suggestion" data-query="github">GitHub</button>
+                </div>
+            </div>
+        </div>
+        <div class="search-footer">
+            <span><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+            <span><kbd>↵</kbd> seleccionar</span>
+            <span><kbd>ESC</kbd> cerrar</span>
+        </div>
+    </div>
+</div>

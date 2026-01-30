@@ -1,0 +1,133 @@
+---
+layout: default
+---
+<header class="header">
+    <nav class="nav container">
+        <a href="{{ '/' | relative_url }}" class="logo">
+            <span class="logo-icon">🚀</span>
+            <span>HolaMundo</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ '/' | relative_url }}#features">Features</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="search-toggle" id="searchToggle" aria-label="Buscar">🔍</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+        </div>
+    </nav>
+</header>
+
+<!-- Search Modal -->
+{% include search-modal.html %}
+
+<article class="post" data-aos="fade-up">
+    <div class="container container-narrow">
+        <header class="post-header">
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%d %b %Y" }}
+                </time>
+                {% if page.categories %}
+                <span class="post-category">{{ page.categories | first }}</span>
+                {% endif %}
+                {% if page.reading_time %}
+                <span class="reading-time">📖 {{ page.reading_time }} min</span>
+                {% endif %}
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="post-description">{{ page.description }}</p>
+            {% endif %}
+            {% if page.tags %}
+            <div class="post-tags">
+                {% for tag in page.tags %}
+                <span class="tag">#{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </header>
+
+        {% if page.image %}
+        <figure class="post-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+        </figure>
+        {% endif %}
+
+        <div class="post-content prose">
+            {{ content }}
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="post-share">
+            <span>Compartir:</span>
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url }}"
+               target="_blank" rel="noopener" class="share-btn twitter">
+                𝕏
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}"
+               target="_blank" rel="noopener" class="share-btn linkedin">
+                in
+            </a>
+            <a href="https://api.whatsapp.com/send?text={{ page.title | uri_escape }}%20{{ page.url | absolute_url }}"
+               target="_blank" rel="noopener" class="share-btn whatsapp">
+                📱
+            </a>
+        </div>
+
+        <!-- Author -->
+        <div class="post-author">
+            <div class="author-avatar">👨‍💻</div>
+            <div class="author-info">
+                <strong>{{ site.author.name | default: "Autor" }}</strong>
+                <p>{{ site.author.bio | default: "Desarrollador apasionado por la tecnología" }}</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="post-nav">
+            {% if page.previous.url %}
+            <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+                <span>← Anterior</span>
+                <strong>{{ page.previous.title }}</strong>
+            </a>
+            {% endif %}
+            {% if page.next.url %}
+            <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+                <span>Siguiente →</span>
+                <strong>{{ page.next.title }}</strong>
+            </a>
+            {% endif %}
+        </nav>
+
+        <!-- Comments -->
+        {% if site.giscus.repo %}
+        <section class="post-comments" id="comments">
+            <h2>💬 Comentarios</h2>
+            <script src="https://giscus.app/client.js"
+                    data-repo="{{ site.giscus.repo }}"
+                    data-repo-id="{{ site.giscus.repo_id }}"
+                    data-category="{{ site.giscus.category }}"
+                    data-category-id="{{ site.giscus.category_id }}"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    data-theme="preferred_color_scheme"
+                    data-lang="{{ page.lang | default: 'es' }}"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </section>
+        {% endif %}
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <p>Hecho con ❤️ para GitHub Pages</p>
+        <p class="copyright">© {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+    </div>
+</footer>

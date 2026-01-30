@@ -1,0 +1,81 @@
+# Português
+lang: pt
+lang_name: Português
+flag: 🇧🇷
+
+# Navigation
+nav:
+  home: Início
+  features: Recursos
+  blog: Blog
+  contact: Contato
+  search: Buscar
+
+# Hero
+hero:
+  title: "Olá Mundo!"
+  subtitle: "Projeto demo com as melhores tecnologias do GitHub Pages"
+  cta_primary: "Ver no GitHub"
+  cta_secondary: "Explorar Tech Stack"
+
+# Features
+features:
+  title: "Recursos"
+  fast:
+    title: "Ultra Rápido"
+    desc: "Site estático otimizado para máxima velocidade"
+  responsive:
+    title: "Responsivo"
+    desc: "Design adaptável para qualquer dispositivo"
+  dark_mode:
+    title: "Modo Escuro"
+    desc: "Tema escuro/claro com detecção automática"
+  secure:
+    title: "Seguro"
+    desc: "HTTPS gratuito com GitHub Pages"
+  seo:
+    title: "SEO Ready"
+    desc: "Otimizado para mecanismos de busca"
+  pwa:
+    title: "PWA"
+    desc: "Instalável como aplicativo nativo"
+
+# Blog
+blog:
+  title: "Blog"
+  read_more: "Ler mais"
+  minutes: "min de leitura"
+  no_posts: "Em breve haverá artigos"
+  subscribe_rss: "Assine o RSS"
+
+# Contact
+contact:
+  title: "Contato"
+  subtitle: "Tem perguntas? Adoraríamos ouvir você!"
+  name: "Nome"
+  email: "Email"
+  subject: "Assunto"
+  message: "Mensagem"
+  send: "Enviar mensagem"
+  sending: "Enviando..."
+  thanks: "Obrigado!"
+  thanks_msg: "Sua mensagem foi enviada"
+
+# Search
+search:
+  placeholder: "Buscar no site..."
+  no_results: "Nenhum resultado encontrado"
+  suggestions: "Sugestões"
+
+# Footer
+footer:
+  made_with: "Feito com ❤️ para GitHub Pages"
+  copyright: "Todos os direitos reservados"
+
+# Misc
+misc:
+  share: "Compartilhar"
+  comments: "Comentários"
+  author: "Autor"
+  previous: "Anterior"
+  next: "Próximo"

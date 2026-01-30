@@ -1,0 +1,43 @@
+---
+layout: default
+title: "¡Gracias! - Hola Mundo"
+description: "Tu mensaje ha sido enviado"
+---
+<header class="header">
+    <nav class="nav container">
+        <a href="{{ '/' | relative_url }}" class="logo">
+            <span class="logo-icon">🚀</span>
+            <span>HolaMundo</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ '/' | relative_url }}#features">Features</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contacto</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+    </nav>
+</header>
+
+<main class="thanks-page">
+    <div class="container">
+        <div class="thanks-content" data-aos="zoom-in">
+            <div class="thanks-icon">✅</div>
+            <h1>¡Mensaje Enviado!</h1>
+            <p>Gracias por contactarnos. Te responderemos lo antes posible.</p>
+            <div class="thanks-actions">
+                <a href="{{ '/' | relative_url }}" class="btn btn-primary">
+                    Volver al inicio
+                </a>
+                <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">
+                    Leer el blog
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>Hecho con ❤️ para GitHub Pages</p>
+    </div>
+</footer>

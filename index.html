@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hola Mundo - Demo con las top tecnologías de GitHub Pages">
+    <meta name="theme-color" content="#6366f1">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Hola Mundo - GitHub Pages">
+    <meta property="og:description" content="Demo con las mejores tecnologías para GitHub Pages">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <title>🚀 Hola Mundo - GitHub Pages</title>
+
+    <!-- Prevent FOUC for dark mode -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme')
+                || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🚀</span>
+                <span>HolaMundo</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tech">Tecnologías</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="contact/">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-toggle" id="searchToggle" aria-label="Buscar">
+                    🔍
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    🌙
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal" aria-hidden="true">
+        <div class="search-modal-overlay" id="searchOverlay"></div>
+        <div class="search-modal-content">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text"
+                           id="searchInput"
+                           class="search-input"
+                           placeholder="Buscar en el sitio... (Ctrl+K)"
+                           autocomplete="off">
+                    <kbd class="search-shortcut">ESC</kbd>
+                </div>
+                <button class="search-close" id="searchClose" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-empty">
+                    <p>Escribe para buscar...</p>
+                </div>
+            </div>
+            <div class="search-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+                <span><kbd>↵</kbd> seleccionar</span>
+                <span><kbd>ESC</kbd> cerrar</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-up">
+                    ¡Hola Mundo! 👋
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Proyecto demo con las <strong>top tecnologías</strong> de GitHub Pages
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://github.com" class="btn btn-primary" target="_blank">
+                        ⭐ Ver en GitHub
+                    </a>
+                    <a href="#tech" class="btn btn-secondary">
+                        Explorar Tech Stack
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre class="code-content"><code><span class="keyword">const</span> saludo = <span class="string">"¡Hola Mundo!"</span>;
+<span class="keyword">const</span> tech = [
+  <span class="string">"HTML5"</span>,
+  <span class="string">"CSS3"</span>,
+  <span class="string">"JavaScript"</span>,
+  <span class="string">"Jekyll"</span>,
+  <span class="string">"GitHub Actions"</span>
+];
+
+console.<span class="function">log</span>(saludo, tech);</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">✨ Características</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Ultra Rápido</h3>
+                    <p>Sitio estático optimizado para máxima velocidad de carga</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Diseño adaptable a cualquier dispositivo</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Dark Mode</h3>
+                    <p>Tema oscuro/claro con detección automática</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Seguro</h3>
+                    <p>HTTPS gratuito con GitHub Pages</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🎯</div>
+                    <h3>SEO Ready</h3>
+                    <p>Optimizado para motores de búsqueda</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-icon">📲</div>
+                    <h3>PWA</h3>
+                    <p>Instalable como aplicación nativa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-stack">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">🛠️ Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="tech-logo">🌐</div>
+                    <h3>HTML5</h3>
+                    <p>Semántico y accesible</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="tech-logo">🎨</div>
+                    <h3>CSS3</h3>
+                    <p>Variables, Grid, Flexbox</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-logo">⚙️</div>
+                    <h3>JavaScript ES6+</h3>
+                    <p>Vanilla JS moderno</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="tech-logo">💎</div>
+                    <h3>Jekyll</h3>
+                    <p>Generador estático</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-logo">🤖</div>
+                    <h3>GitHub Actions</h3>
+                    <p>CI/CD automatizado</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="tech-logo">📦</div>
+                    <h3>Service Workers</h3>
+                    <p>Funcionalidad offline</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Integrations Section -->
+    <section id="integrations" class="integrations">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">🔗 Integraciones</h2>
+            <div class="integrations-list">
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="0">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Blog con Jekyll</strong>
+                        <p>Sistema de posts en Markdown con categorías y tags</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="50">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Formulario de Contacto</strong>
+                        <p>Integración con Formspree (sin backend)</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="100">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Comentarios (Giscus)</strong>
+                        <p>Sistema de comentarios basado en GitHub Discussions</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="150">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Analytics</strong>
+                        <p>Google Analytics o Plausible (privacy-friendly)</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="200">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Búsqueda Local (Lunr.js)</strong>
+                        <p>Busca contenido sin servidor - Prueba con Ctrl+K</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="250">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Internacionalización (i18n)</strong>
+                        <p>Soporte multiidioma: Español, English, Português</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="300">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Animaciones (AOS)</strong>
+                        <p>Animate On Scroll para efectos suaves</p>
+                    </div>
+                </div>
+                <div class="integration-item" data-aos="fade-right" data-aos-delay="350">
+                    <span class="check">✅</span>
+                    <div>
+                        <strong>Lighthouse CI</strong>
+                        <p>Tests de rendimiento automáticos en cada PR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Lighthouse Score</span>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Integraciones</span>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">Idiomas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" data-aos="fade-up">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para empezar?</h2>
+                <p>Explora el blog o ponte en contacto</p>
+                <div class="cta-buttons">
+                    <a href="blog/" class="btn btn-primary">📝 Leer el Blog</a>
+                    <a href="contact/" class="btn btn-secondary">📬 Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Hecho con ❤️ para GitHub Pages</p>
+            <p class="footer-links">
+                <a href="https://github.com">GitHub</a> •
+                <a href="https://pages.github.com">GitHub Pages</a> •
+                <a href="https://jekyllrb.com">Jekyll</a> •
+                <a href="blog/">Blog</a> •
+                <a href="contact/">Contacto</a>
+            </p>
+            <p class="copyright">© 2026 Hola Mundo Demo</p>
+        </div>
+    </footer>
+
+    <!-- Language Selector -->
+    <div class="lang-selector" id="langSelector">
+        <a href="#" class="lang-option active" title="Español">🇪🇸</a>
+        <a href="#" class="lang-option" title="English">🇺🇸</a>
+        <a href="#" class="lang-option" title="Português">🇧🇷</a>
+    </div>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Lunr.js for Search -->
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+
+    <!-- Search Script -->
+    <script src="js/search.js"></script>
+
+    <!-- Main App -->
+    <script src="js/app.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('SW registrado'))
+                .catch(err => console.log('SW error:', err));
+        }
+    </script>
+</body>
+</html>
